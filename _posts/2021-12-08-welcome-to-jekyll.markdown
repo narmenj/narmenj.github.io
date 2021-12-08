@@ -14,5 +14,5 @@ categories: مطالب روزمره
 
 این وبلاگ رو هم ساختم فعلا جای دیگه ای ندارم برم /:
 
-اینم یه اسکرین شات از دسکتاپم
-![Antix linux, openbox](/images/alob1.png){:class="img-responsive"}
+ [اینم](/images/alob1.png){:target="_blank"} یه اسکرین شات از دسکتاپم
+(antix linux + openbox + conky + tint2 + wbar + terminator)
