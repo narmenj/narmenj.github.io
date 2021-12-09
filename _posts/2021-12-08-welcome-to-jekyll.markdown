@@ -14,5 +14,5 @@ categories: مطالب روزمره
 
 این وبلاگ رو هم ساختم فعلا جای دیگه ای ندارم برم /:
 
- [اینم](/images/alob1.png){:target="_blank"} یه اسکرین شات از دسکتاپم
+ [اینم](https://s21.picofile.com/file/8444875134/alob1.png){:target="_blank"} یه اسکرین شات از دسکتاپم
 (`antix linux` + `openbox` + `conky` + `tint2` + `wbar` + `terminator`)
