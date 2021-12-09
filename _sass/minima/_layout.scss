@@ -204,6 +204,7 @@
 
 .post-link {
   display: block;
+  direction: rtl;
   @include relative-font-size(1.5);
 }
 
