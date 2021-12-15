@@ -14,5 +14,5 @@ categories: مطالب روزمره
 
 این وبلاگ رو هم ساختم فعلا جای دیگه ای ندارم برم /:
 
- [اینم](https://postimg.cc/Lh1RD3Jy){:target="_blank"} یه اسکرین شات از دسکتاپم
+ [اینم](https://live.staticflickr.com/65535/51747100472_d9b54a791d_b.jpg){:target="_blank"} یه اسکرین شات از دسکتاپم
 (`antix linux` + `openbox` + `conky` + `tint2` + `terminator`)
