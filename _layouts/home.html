@@ -20,7 +20,9 @@ title: Home
             {{ post.title | escape }}
           </a>
         </h3>
+	<p>
 	  {{ post.content | strip_html | truncatewords: 50 }}
+	</p>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
 	    <a class="excerpt-post-link" href="{{ post.url | relative_url }}">ادامه مطلب</a>
