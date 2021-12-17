@@ -5,6 +5,16 @@ section {
   direction: rtl;
 }
 section p{
-  font: 100% IranSANS, Tahoma, Geneva, sans-serif
+  font: 100% IranSANS, Tahoma, Geneva, sans-serif;
+}
+pre, code {
+  text-align: left;
+  direction: ltr;
 }
 @import 'jekyll-theme-minimal';
+
+// Import partials.
+@import
+  "base",
+  "syntax-highlighting"
+;
