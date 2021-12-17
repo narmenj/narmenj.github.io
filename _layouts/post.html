@@ -17,7 +17,7 @@ layout: default
   {% endif %}
   {% for category in categories %}
 دسته:
-  <a href="{{site.baseurl}}/category/{{category|slugize}}">{{category}}</a>
+  <a href="{{site.baseurl}}/categories/{{category|slugize}}">{{category}}</a>
   {% unless forloop.last %}&nbsp;{% endunless %}
   {% endfor %}
 </div>

@@ -1,5 +1,5 @@
 ---
 layout: category
 category-name: روزمره
-permalink: "/category/روزمره"
+permalink: "/categories/روزمره"
 ---
