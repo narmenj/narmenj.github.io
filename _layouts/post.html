@@ -8,3 +8,5 @@ layout: default
 <p class="view">{{ page.author | default: site.author }}</p>
 
 {{content}}
+
+{{page.categories | capitalize | join: ', '}}
