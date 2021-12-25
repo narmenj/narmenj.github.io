@@ -2,7 +2,6 @@
 layout: post
 title:  "لینوکس و انیمه"
 date:   2021-12-17 20:50:11 +0350
-comments: false
 categories:
   لینوکس
   انیمه

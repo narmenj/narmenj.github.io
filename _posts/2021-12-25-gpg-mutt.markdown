@@ -2,7 +2,6 @@
 layout: post
 title:  "رمزنگاری در mutt"
 date:   2021-12-25 12:18:11 +0350
-comments: true
 categories: لینوکس
 ---
 آموزش ساده رمزنگاری با `gpg` در `mutt‍`
