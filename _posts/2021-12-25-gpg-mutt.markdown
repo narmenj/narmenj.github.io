@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "رمزنگاری در mutt"
+date:   2021-12-25 12:18:11 +0350
+categories: لینوکس
+
+---
+آموزش ساده رمزنگاری با `gpg` در `mutt‍`
+#### 1- تولید کلید‌های gpg:   
+ترمینال را باز کنید و دستور زیر را اجرا کنید:   
+{% highlight console %}
+$ gpg --full-generate-key
+{% endhighlight %}
+#### 2- ارسال کلید عمومی به سرور:   
+قبل از ارسال کلید عمومی به سرور بررسی کنید اطلاعات وارد شده صحیح هستند:   
+{% highlight console %}
+$ gpg --list-keys
+{% endhighlight %}   
+بعد از اطمینان از درست بودن اطلاعات، کلید عمومی را به سرور ارسال کنید:   
+{% highlight console %}
+$ gpg --send-keys
+{% endhighlight %}   
+برای آشنایی بیشتر با `gpg` [اینجا](https://blog.faradars.org/encrypt-and-decrypt-files-with-gpg-on-linux/){:target="_blank"} را ببینید   
+#### 3- پیکربندی mutt:   
+با دستور زیر فایل `gpg.rc` را پیدا میکنیم و یک کپی از آن را به پوشه `~/.mutt` میفرستیم:   
+{% highlight console %}
+$ locate gpg.rc
+$ cp /gpg_file_location  ~/.mutt/gpg.rc
+{% endhighlight %}   
+و دستور زیر را اجرا میکنیم:   
+{% highlight console %}
+$ echo "source ~/.mutt/gpg.rc" >> ~/.mutt/muttrc
+{% endhighlight %}   
+تا اینجای کار در آرچ لینوکس مشکلی نداشتم ولی در `antiX linux` این خطا را میداد `pgpewrap: not found`   
+برای خلاص شدن از آن هم باید فایل `gpg.rc` را ویرایش کنید و هرجا(دو جا) `pgpewrap` را دیدید آن را بشکل زیر درآورید:   
+{% highlight console %}
+/usr/lib/mutt/pgpewrap
+{% endhighlight %}   
+سپس فایل `~/.mutt/muttrc` را ویرایش کرده تا بتواند ایمیل‌ها را رمزگذاری کند و بالعکس.   
+برای این کار خطوط زیر را به آن اضافه میکنیم:   
+{% highlight conf %}
+set pgp_autosign
+set pgp_replyencrypt
+set pgp_use_gpg_agent
+set crypt_use_gpgme=no
+set crypt_autosmime=no
+set crypt_opportunistic_encrypt
+message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-tr>
+{% endhighlight %}   
+برای اینکه ایمیل‌های ارسالیتان بطور خودکار رمزگذاری شود [این فایل](https://www.erack.de/download/generate_crypt_auto){:target="_blank"} را در پوشه `~/.mutt` ذخیره کنید و آن را بصورت زیر در فایل `~/.mutt/muttrc` سورس کنید:   
+{% highlight console %}
+source '~/.mutt/generate_crypt_auto |'
+{% endhighlight %}   
+از این به بعد اگر کلید عمومی گیرنده را در لیست کلیدهایتان داشته باشید ایمیل ارسالیتان بصورت خودکار با کلید عمومی گیرنده رمزگذاری میشود.
