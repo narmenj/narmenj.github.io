@@ -10,3 +10,7 @@ layout: default
 {{content}}
 
 {{page.categories | capitalize | join: ', '}}
+
+{% if site.disqus.shortname %}
+  {% include disqus_comments.html %}
+{% endif %}
