@@ -21,10 +21,11 @@ $ gpg --send-keys
 {% endhighlight %}   
 برای آشنایی بیشتر با `gpg` [اینجا](https://blog.faradars.org/encrypt-and-decrypt-files-with-gpg-on-linux/){:target="_blank"} را ببینید   
 #### 3- پیکربندی mutt:   
-با دستور زیر فایل `gpg.rc` را پیدا میکنیم و یک کپی از آن را به پوشه `~/.mutt` میفرستیم:   
+با دستور زیر فایل `gpg.rc` را پیدا میکنیم و یک کپی از آن را به پوشه `~/.mutt` میفرستیم و آن را قابل اجرا میکنیم:   
 {% highlight console %}
 $ locate gpg.rc
 $ cp /gpg_file_location  ~/.mutt/gpg.rc
+$ chmod +x ~/.mutt/gpg.rc
 {% endhighlight %}   
 و دستور زیر را اجرا میکنیم:   
 {% highlight console %}
