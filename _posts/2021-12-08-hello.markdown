@@ -2,6 +2,7 @@
 layout: post
 title:  "درود !"
 date:   2021-12-08 14:45:41 +0350
+comments: false
 categories: روزمره
 ---
 بالاخره از تو غارمون دراومدیم /:   
