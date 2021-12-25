@@ -29,12 +29,6 @@ github_username:  mokaphot
 #show_excerpts: true
 #excerpt_separator: <!–more–>
 
-# Disqus Comments
-#disqus:
-  # Leave shortname blank to disable comments site-wide.
-  # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
- # shortname: mokaphot
-
 # Build settings
 #theme: minima
 #remote_theme: pages-themes/minimal@v0.2.0
