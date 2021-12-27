@@ -10,7 +10,7 @@
       "tags"     : "{{ post.tags | join: ', ' }}",
       "date"     : "{{ post.date }}",
       "discription" : "{{post.description | strip_html | strip_newlines | remove_chars | escape }}",
-      "content": {{ page.content | jsonify }}
+      "content": {{ post.content | jsonify }}
 
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
