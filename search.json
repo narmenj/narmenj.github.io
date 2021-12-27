@@ -9,8 +9,8 @@
       "category" : "{{post.categories | join: ', '}}",
       "tags"     : "{{ post.tags | join: ', ' }}",
       "date"     : "{{ post.date }}",
-      "discription" : "{{post.description | strip_html | strip_newlines | escape }}",
-      "content"  : "{{ post.content | truncatewords: 280 | markdownify | strip_html | strip_newlines | escape }}"
+      "discription" : "{{post.description | strip_html | strip_newlines | remove_chars | escape }}",
+      "content": {{ page.content | jsonify }}
 
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
