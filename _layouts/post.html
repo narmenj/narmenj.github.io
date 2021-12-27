@@ -11,6 +11,15 @@ layout: default
 
 {{page.categories | capitalize | join: ', '}}
 
+<div class="PageNavigation">
+  {% if page.previous.url %}
+    <a class="prev" href="{{page.previous.url}}">{{page.previous.title}} &raquo;</a>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="next" href="{{page.next.url}}">&laquo; {{page.next.title}}</a>
+  {% endif %}
+</div>
+
 <script src="https://utteranc.es/client.js"
         repo="mokaphot/mokaphot.github.io"
         issue-term="pathname"

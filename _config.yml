@@ -38,7 +38,7 @@ paginate_path: "/page:num/"
 remote_theme: pages-themes/minimal@master
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-remote-theme
   - jekyll-sitemap
 
 # Exclude from processing.
