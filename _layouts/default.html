@@ -20,14 +20,8 @@
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
- <div class="grid" id="searchBar">
- <div id="search">
-     <form role="search" method="get" action="{{ site.url }}/search/">
-         <input id="searchString" name="searchString"
-                 placeholder="Search" type="text">
-     </form>
- </div>
-</div><br><br><br>
+	<br>
+        <p><a href="/search" title="جستجو">Search</a></p>
         <p><a href="/categories" title="آرشیو مطالب">Archive</a></p>
 
       </header>

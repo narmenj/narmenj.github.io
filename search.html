@@ -4,7 +4,20 @@
  permalink: /search/
  sitemap: false
 ---
-<div id="home-search" class="home">
-     <script async src="https://cse.google.com/cse.js?cx=b1a1b1ecfcbc54479"></script>
-     <gcse:search queryParameterName="searchString"></gcse:search>
+<!-- Html Elements for Search -->
+<div id="search-container">
+<input type="text" id="search-input" placeholder="search...">
+<ul id="results-container"></ul>
 </div>
+
+<!-- Script pointing to search-script.js -->
+<script src="/assets/js/search-script.js" type="text/javascript"></script>
+
+<!-- Configuration -->
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json'
+})
+</script>
