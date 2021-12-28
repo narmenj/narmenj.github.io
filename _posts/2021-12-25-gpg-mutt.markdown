@@ -45,7 +45,7 @@ set pgp_use_gpg_agent
 set crypt_use_gpgme=no
 set crypt_autosmime=no
 set crypt_opportunistic_encrypt
-message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-tr>
+message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
 {% endhighlight %}   
 برای اینکه ایمیل‌های ارسالیتان بطور خودکار رمزگذاری شود [این فایل](https://www.erack.de/download/generate_crypt_auto){:target="_blank"} را در پوشه `~/.mutt` ذخیره کنید و آن را بصورت زیر در فایل `~/.mutt/muttrc` سورس کنید:   
 {% highlight console %}
