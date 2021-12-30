@@ -1,5 +1,18 @@
 ---
 ---
+section a, header a {
+  text-decoration: none;
+  font-weight: normal;
+  color: #1863a1;
+}
+section a:hover, header a:hover, header a:focus {
+  text-decoration: underline;
+  font-weight: normal;
+  color: #0181eb;
+}
+section a:visited {
+  color: #751590;
+}
 section p{
   text-align: justify;
   direction: rtl;
