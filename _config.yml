@@ -29,6 +29,9 @@ github_username:  mokaphot
 #show_excerpts: true
 #excerpt_separator: <!–more–>
 
+markdown: kramdown
+highlighter: rouge
+
 paginate: 7
 paginate_path: "/page:num/"
 
