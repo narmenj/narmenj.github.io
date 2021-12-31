@@ -3,6 +3,7 @@ layout: post
 title:  "نصب dwm"
 date:   2021-12-31 13:17:51 +0350
 categories: linux
+excerpt_separator: <!--more-->
 ---
 با دستورات زیر `dwm`، `st` و `dmenu` را نصب میکنیم:
 ```console
@@ -15,6 +16,7 @@ $ cd ~/.config/dwm && sudo make clean install
 $ cd ~/.config/st && sudo make clean install
 $ cd ~/.config/dmenu && sudo make clean install
 ```   
+<!--more-->
 #### اجرا
 برای اجرای `dwm` قاعدتا باید فایل `~/.xinitrc` را ویرایش کنید و خط زیر را به انتهای آن اضافه کنید:
 ```console

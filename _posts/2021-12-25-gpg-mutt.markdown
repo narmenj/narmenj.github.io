@@ -3,6 +3,7 @@ layout: post
 title:  "رمزنگاری در mutt"
 date:   2021-12-25 12:18:11 +0350
 categories: linux
+excerpt_separator: <!--more-->
 ---
 آموزش ساده رمزنگاری با `gpg` در `mutt‍`
 #### 1- تولید کلید‌های gpg:   
@@ -19,6 +20,7 @@ $ gpg --list-keys
 {% highlight console %}
 $ gpg --send-keys
 {% endhighlight %}   
+<!--more-->
 #### 3- پیکربندی mutt:   
 با دستور زیر فایل `gpg.rc` را پیدا میکنیم و یک کپی از آن را به پوشه `~/.mutt` میفرستیم:   
 {% highlight console %}
