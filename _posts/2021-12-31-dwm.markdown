@@ -6,14 +6,14 @@ categories: linux
 ---
 با دستورات زیر `dwm`، `st` و `dmenu` را نصب میکنیم:
 ```console
-git clone http://git.suckless.org/dwm ~/.config/dwm
-git clone http://git.suckless.org/st ~/.config/st
-git clone http://git.suckless.org/dmenu ~/.config/dmenu
+$ git clone http://git.suckless.org/dwm ~/.config/dwm
+$ git clone http://git.suckless.org/st ~/.config/st
+$ git clone http://git.suckless.org/dmenu ~/.config/dmenu
 ```   
 ```console
-cd ~/.config/dwm && sudo make clean install
-cd ~/.config/st && sudo make clean install
-cd ~/.config/dmenu && sudo make clean install
+$ cd ~/.config/dwm && sudo make clean install
+$ cd ~/.config/st && sudo make clean install
+$ cd ~/.config/dmenu && sudo make clean install
 ```   
 #### اجرا
 برای اجرای `dwm` قاعدتا باید فایل `~/.xinitrc` را ویرایش کنید و خط زیر را به انتهای آن اضافه کنید:
