@@ -8,6 +8,9 @@ layout: default
 </small></li></ul>
 <div class="content">
    {{ post.excerpt }}
+{% if post.excerpt != post.content %}
+<a href="{{site_url}}{{post.url}}">ادامه مطلب...</a>
+{% endif %}
 </div><br>
 {% endfor %}
 
