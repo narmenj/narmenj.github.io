@@ -3,9 +3,9 @@ layout: default
 ---
 {% for post in paginator.posts %}
 <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-<ul><li><small>
+<small>
   <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
-</small></li></ul>
+</small>
 <div class="content">
    {{ post.excerpt }}
 {% if post.excerpt != post.content %}
