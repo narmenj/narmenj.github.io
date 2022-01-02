@@ -9,7 +9,7 @@ categories:
 ---
 `ani-cli` یه ابزار جالب و کاربردی برای عاشقان انیمه هست که میتونیم باهاش انیمه مورد نظر رو جستجو و پلی کنیم.   
 در اصل یه `بش اسکریپت`ـه که از سایت [gogoanime](https://gogoanime.pe){:target="_blank"} استفاده میکنه (خوشبختانه هنوز فیلتر نشده |:)
-امکانات زیادی داره که [اینجا](https://github.com/pystardust/ani-cli){:target="_blank"} کامل در موردش توضیح دادند.   
+امکانات خوبی داره که [اینجا](https://github.com/pystardust/ani-cli){:target="_blank"} کامل در موردش توضیح دادند.   
 اونایی که میخوان تو ویندوز با این ابزار کار کنند هم [از این لینک](https://github.com/pystardust/ani-cli/tree/windows-vlc){:target="_blank"} استفاده کنند.
 <!--more-->
 #### آپدیت
