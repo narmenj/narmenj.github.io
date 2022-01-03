@@ -53,7 +53,6 @@ $ sudo /usr/sbin/ccpdadmin -p LBP2900 -o /dev/usb/lp0
 نصب را با دستورات زیر ادامه میدهیم:  
 ```console
 $ sudo systemctl enable ccpd.service
-$ sudo systemctl start ccpd.service
 ```  
 کامپیوتر را از نو راه‌اندازی میکنیم و پرینتر را نیز یکبار خاموش و روشن میکنیم.  
 کار نصب تمام شد و فقط باید ببینیم همه چیز درست پیش میرود:
