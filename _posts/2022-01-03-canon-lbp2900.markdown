@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "پرینتر cannon-LBP2900"
+title: "پرینتر canon-LBP2900"
 date: 2022-01-03 11:19:17 +0350
 excerpt_separator: <!--more-->
 categories:
