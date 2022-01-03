@@ -25,7 +25,7 @@ $ systemctl start cups
 ```  
 و وضعیتش را بدین صورت چک میکنیم:  
 ```console
-systemctl status cups
+$ systemctl status cups
 ```  
 باید آن را `active` نشان دهد.  
 #### تنظیمات CAPT
