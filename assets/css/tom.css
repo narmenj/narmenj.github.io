@@ -50,7 +50,6 @@
 .container {
   position: relative;
   overflow: hidden;
-  height: 120px;
 }
 
 .menu-drawer ul li {
@@ -61,15 +60,16 @@
 .menu-drawer {
   width: 190px;
   background-color: #fff;
-  height: 120px;
-  position: absolute;
+  position: relative;
   left: -550px;
   top: 0;
   transition: left linear .2s;
-  padding: 65px 50px 50px 50px;
+  padding: 15px 0px 0px 60px;
 }
 
 .open {
+  height: 120px;
+  position: relative;
   left: 0px;
   transition: left linear .2s;
 }
