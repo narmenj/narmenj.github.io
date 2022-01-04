@@ -63,15 +63,15 @@
   background-color: #fff;
   height: 120px;
   position: absolute;
-  right: -550px;
+  left: -550px;
   top: 0;
-  transition: right linear .2s;
+  transition: left linear .2s;
   padding: 65px 50px 50px 50px;
 }
 
 .open {
-  right: 0px;
-  transition: right linear .2s;
+  left: 0px;
+  transition: left linear .2s;
 }
 
 .menu-drawer {
