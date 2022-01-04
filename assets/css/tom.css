@@ -64,7 +64,6 @@
   left: -550px;
   top: 0;
   transition: left linear .2s;
-  padding: 15px 0px 0px 60px;
 }
 
 .open {
@@ -72,6 +71,7 @@
   position: relative;
   left: 0px;
   transition: left linear .2s;
+  padding: 75px 0px 0px 25px;
 }
 
 .menu-drawer {
