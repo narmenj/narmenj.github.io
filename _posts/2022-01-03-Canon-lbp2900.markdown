@@ -20,12 +20,12 @@ $ sudo pacman -S cups
 ```  
 سپس `CUPS` را فعال میکنیم:   
 ```console
-$ systemctl enable cups
-$ systemctl start cups
+$ systemctl enable cups.service
+$ systemctl start cups.service
 ```  
 و وضعیتش را بدین صورت چک میکنیم:  
 ```console
-$ systemctl status cups
+$ systemctl status cups.service
 ```  
 باید آن را `active` نشان دهد.  
 #### تنظیمات CAPT
