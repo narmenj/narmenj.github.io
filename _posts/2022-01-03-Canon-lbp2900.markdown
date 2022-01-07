@@ -69,4 +69,5 @@ $ captstatusui -P LBP2900
 http://localhost:631
 ```  
 به سربرگ `Printers` رفته و اگر پرینتر در حالت `pause` بود `resume printer` را میزنیم  
-حالا باید پرینتر نصب و آماده استفاده باشد اگر باز هم پرینت نمیگیرد یک بار دیگر آن را خاموش و سپس روشن کنید.
+حالا باید پرینتر نصب و آماده استفاده باشد اگر باز هم پرینت نمیگیرد یک بار دیگر آن را خاموش و سپس روشن کنید.  
+[منبع](https://forum.manjaro.org/t/how-to-use-the-lbp-2900-on-manjaro-linux-xfce-version/57070/25){:target="_blank"}
