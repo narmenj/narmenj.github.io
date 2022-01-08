@@ -4,8 +4,8 @@ title:  "لینوکس و انیمه"
 date:   2021-12-17 20:50:11 +0350
 excerpt_separator: <!--more-->
 categories:
-  linux
-  anime
+-  linux
+-  anime
 ---
 `ani-cli` یه ابزار جالب و کاربردی برای عاشقان انیمه هست که میتونیم باهاش انیمه مورد نظر رو جستجو و پلی کنیم.   
 در اصل یه `بش اسکریپت`ـه که از سایت [gogoanime](https://gogoanime.pe){:target="_blank"} استفاده میکنه (خوشبختانه هنوز فیلتر نشده |:)
