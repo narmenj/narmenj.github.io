@@ -23,7 +23,7 @@ $ mkdir ~/decrypted
 ```console
 $ encfs ~/.encrypted ~/decrypted
 ```
-برای پیاده کردن (جدا کردن)، از این دستور استفاده میکنیم:
+برای پیاده کردن (unmount)، از این دستور استفاده میکنیم:
 ```console
 $ fusermount -u ~/decrypted
 ```
