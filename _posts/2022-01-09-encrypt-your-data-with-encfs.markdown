@@ -32,8 +32,10 @@ $ fusermount -u ~/decrypted
 ```console
 $ encfsctl passwd ~/.encrypted
 ```
-اگر می‌خواهید از `gui` استفاده کنید در آرچ لینوکس این بسته را نیز نصب کنید:
+اگر می‌خواهید از gui استفاده کنید در آرچ لینوکس این بسته را نیز نصب کنید:
 ```console
 $ yay -S  gnome-encfs-manager-bin
 ```
 و به همین ترتیب میتوانید روی داده‌هایتان در هارداکسترنال و فلش درایوها، رمزگذاری کنید.
+
+*[gui]: Graphical user interface
