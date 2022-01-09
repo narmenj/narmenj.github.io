@@ -23,12 +23,12 @@ $ mkdir ~/decrypted
 ```console
 $ encfs ~/.encrypted ~/decrypted
 ```
-برای پیاده کردن (unmount)، از این دستور استفاده میکنیم:
+برای پیاده کردن (unmount)، از این استفاده میکنیم:
 ```console
 $ fusermount -u ~/decrypted
 ```
 برای سوارکردن مجدد هم از دو دستور بالاتر استفاده می‌کنیم و رمزی که داده بودیم را وارد می‌کنیم.  
-و با این دستور پسورد را تغییر می‌دهیم:
+و با این یکی پسورد را تغییر می‌دهیم:
 ```console
 $ encfsctl passwd ~/.encrypted
 ```
