@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "رمزگذاری روی پوشه‌ها با encfs در لینوکس"
-date: 2022-01-09 08:08:33 +0350
+date: 2022-01-09 08:08:33 +0330
 excerpt_separator: <!--more-->
 categories:
  - linux

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "راه‌اندازی سیستم از طریق usb در سیستم‌های قدیمی"
-date: 2022-01-08 08:55:57 +0350
+date: 2022-01-08 08:55:57 +0330
 excerpt_separator: <!--more-->
 categories:
  - linux

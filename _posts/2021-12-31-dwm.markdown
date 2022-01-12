@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "نصب dwm"
-date:   2021-12-31 13:17:51 +0350
+date:   2021-12-31 13:17:51 +0330
 categories: linux
 excerpt_separator: <!--more-->
 ---

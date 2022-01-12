@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "مدیریت دات‌فایل‌ها با stow"
-date: 2022-01-11 11:16:55 +0350
+date: 2022-01-11 11:16:55 +0330
 excerpt_separator: <!--more-->
 categories:
  - linux

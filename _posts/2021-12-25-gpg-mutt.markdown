@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "رمزنگاری در mutt"
-date:   2021-12-25 12:18:11 +0350
+date:   2021-12-25 12:18:11 +0330
 categories: linux
 excerpt_separator: <!--more-->
 ---
