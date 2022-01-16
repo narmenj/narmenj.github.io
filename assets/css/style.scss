@@ -58,6 +58,11 @@ code {
   float: left;
   text-align: left;
 }
+.pagination {
+    float: right;
+    text-align: right;
+    direction: rtl;
+}
 @import 'jekyll-theme-minimal';
 
 // Import partials.

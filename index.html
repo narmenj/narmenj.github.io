@@ -18,18 +18,19 @@ layout: default
 <div class="pagination">
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path }}" class="previous">
-      Previous
+      قبلی
     </a>
   {% else %}
-    <span class="previous">Previous</span>
+    <span class="previous">قبلی</span>
   {% endif %}
   <span class="page_number ">
-    Page: {{ paginator.page }} of {{ paginator.total_pages }}
+    صفحه: {{ paginator.page }} از {{ paginator.total_pages }}
   </span>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    <a href="{{ paginator.next_page_path }}" class="next">بعدی</a>
   {% else %}
-    <span class="next ">Next</span>
-  {% endif %}<br>
+    <span class="next ">بعدی</span>
+  {% endif %}
+</div><br><br>
+
     <p class="rss-subscribe">اشتراک <a href="{{ "/feed.xml" | relative_url }}"> RSS</a></p>
-</div>
