@@ -3,6 +3,7 @@ layout: post
 title: "هک پسوردها در لینوکس"
 date: 2022-01-23 08:33:17 +0330
 excerpt_separator: <!--more-->
+description: blablabla
 categories:
  - linux
 ---
