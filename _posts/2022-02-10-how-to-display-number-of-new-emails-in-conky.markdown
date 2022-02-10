@@ -25,9 +25,9 @@ if rc == "OK":
     print("Connected to", imapServer)
     rc, message = Mailbox.status("INBOX", "(UNSEEN)")
     unreadCount = int(re.search("UNSEEN (\d+)",str( message[0])).group(1))
-    f = open("/tmp/mailnotify", "w")
-    f.write(str(unreadCount))
-    f.close
+    file = open("/tmp/mailnotify", "w")
+    file.write(str(unreadCount))
+    file.close
 else:
     print("Connection failed!")
 
