@@ -24,7 +24,7 @@ rc, resp = Mailbox.login(username, password)
 if rc == "OK":
     print("Connected to", imapServer)
     rc, message = Mailbox.status("INBOX", "(UNSEEN)")
-    unreadCount = int(re.search("UNSEEN (\d+)",str( message[0])).group(1))
+    unreadCount = int(re.search("UNSEEN (\d+)",str(message[0])).group(1))
     f = open("/tmp/mailnotify.txt", "w")
     f.write(str(unreadCount))
     f.close
