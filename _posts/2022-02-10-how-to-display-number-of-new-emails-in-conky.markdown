@@ -9,7 +9,7 @@ categories:
 برای این که در کانکی تعداد ایمیل‌های جدید را ببینیم، ابتدا فایلی با محتوای زیر و با نام دلخواه مثلا `checkmail.py` میسازیم: (یوزرنیم و پسورد خود را در آن جایگزین میکنیم)
 <!--more-->
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python
 import imaplib
 import re
 
