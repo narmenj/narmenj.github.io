@@ -4,7 +4,7 @@ layout: default
 {% for post in paginator.posts %}
 <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
 <small>
-  <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
+  <span class="date">{{ post.date | date: '%Y/%m/%d' }}</span>
 </small>
 <div class="content">
    {{ post.excerpt }}
