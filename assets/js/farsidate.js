@@ -1,50 +1,64 @@
-var WEEKDAYS = new Array( "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" );
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+/*
+ Name: Persian Date
+ Developer : Bahram Maravandi
+ Lastupdate: 24-12-2007
+ Thanks to: Amin Habibi Shahri
+ 
+ Modified by Vahid Nasiri - 12/2008
+ */
+var WEEKDAYS = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 var PERSIAN_MONTHS = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
-var PERSIAN_DIGITS = ["۰","۱","۲","۳","۴"," ۵","۶","۷","۸","۹"];						  
-var PERSIAN_DAYS = ["اورمزد","بهمن","اوردیبهشت","شهریور","سپندارمذ","خورداد","امرداد","دی به آذز","آذز","آبان","خورشید","ماه","تیر","گوش","دی به مهر","مهر","سروش","رشن","فروردین","بهرام","رام","باد","دی به دین","دین","ارد","اشتاد","آسمان","زامیاد","مانتره سپند","انارام","زیادی"];
+var PERSIAN_DIGITS = ["۰", "۱", "۲", "۳", "۴", " ۵", "۶", "۷", "۸", "۹"];
+var PERSIAN_DAYS = ["اورمزد", "بهمن", "اوردیبهشت", "شهریور", "سپندارمذ", "خورداد", "امرداد", "دی به آذز", "آذز", "آبان", "خورشید", "ماه", "تیر", "گوش", "دی به مهر", "مهر", "سروش", "رشن", "فروردین", "بهرام", "رام", "باد", "دی به دین", "دین", "ارد", "اشتاد", "آسمان", "زامیاد", "مانتره سپند", "انارام", "زیادی"];
 var PERSIAN_WEEKDAYS = new Array("یکشنبه", "دوشنبه", "سه شنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه");
+var GREGORIAN_MONTH = ["ژانویه", "فوریه", "مارس", "آوریل", "می", "ژوئن", "جولای", "آگوست", "سپتامبر", "اکتبر", "نوامبر", "دسامبر"];
 
 var GREGORIAN_EPOCH = 1721425.5;
 var PERSIAN_EPOCH = 1948320.5;
 
 /*  MOD  --  Modulus function which works for non-integers.  */
-function mod(a, b)
-{
+function mod(a, b){
     return a - (b * Math.floor(a / b));
 }
 
-function jwday(j)
-{
+function jwday(j){
     return mod(Math.floor((j + 1.5)), 7);
 }
 
 //  LEAP_GREGORIAN  --  Is a given year in the Gregorian calendar a leap year ?
-function leap_gregorian(year)
-{
+function leap_gregorian(year){
     return ((year % 4) == 0) &&
-            (!(((year % 100) == 0) && ((year % 400) != 0)));
+    (!(((year % 100) == 0) && ((year % 400) != 0)));
 }
 
 //  GREGORIAN_TO_JD  --  Determine Julian day number from Gregorian calendar date
-function gregorian_to_jd(year, month, day)
-{
+function gregorian_to_jd(year, month, day){
     return (GREGORIAN_EPOCH - 1) +
-           (365 * (year - 1)) +
-           Math.floor((year - 1) / 4) +
-           (-Math.floor((year - 1) / 100)) +
-           Math.floor((year - 1) / 400) +
-           Math.floor((((367 * month) - 362) / 12) +
-           ((month <= 2) ? 0 :
-                               (leap_gregorian(year) ? -1 : -2)
-           ) +
-           day);
+    (365 * (year - 1)) +
+    Math.floor((year - 1) / 4) +
+    (-Math.floor((year - 1) / 100)) +
+    Math.floor((year - 1) / 400) +
+    Math.floor((((367 * month) - 362) / 12) +
+    ((month <= 2) ? 0 : (leap_gregorian(year) ? -1 : -2)) +
+    day);
 }
 
 //  JD_TO_GREGORIAN  --  Calculate Gregorian calendar date from Julian day
-function jd_to_gregorian(jd) {
-    var wjd, depoch, quadricent, dqc, cent, dcent, quad, dquad,
-        yindex, dyindex, year, yearday, leapadj;
-
+function jd_to_gregorian(jd){
+    var wjd, depoch, quadricent, dqc, cent, dcent, quad, dquad, yindex, dyindex, year, yearday, leapadj;
+    
     wjd = Math.floor(jd - 0.5) + 0.5;
     depoch = wjd - GREGORIAN_EPOCH;
     quadricent = Math.floor(depoch / 146097);
@@ -59,61 +73,53 @@ function jd_to_gregorian(jd) {
         year++;
     }
     yearday = wjd - gregorian_to_jd(year, 1, 1);
-    leapadj = ((wjd < gregorian_to_jd(year, 3, 1)) ? 0
-                                                  :
-                  (leap_gregorian(year) ? 1 : 2)
-              );
+    leapadj = ((wjd < gregorian_to_jd(year, 3, 1)) ? 0 : (leap_gregorian(year) ? 1 : 2));
     month = Math.floor((((yearday + leapadj) * 12) + 373) / 367);
     day = (wjd - gregorian_to_jd(year, month, 1)) + 1;
-
+    
     return new Array(year, month, day);
 }
 
 //  LEAP_PERSIAN  --  Is a given year a leap year in the Persian calendar ?
-function leap_persian(year)
-{
+function leap_persian(year){
     return ((((((year - ((year > 0) ? 474 : 473)) % 2820) + 474) + 38) * 682) % 2816) < 682;
 }
 
 //  PERSIAN_TO_JD  --  Determine Julian day from Persian date
-function persian_to_jd(year, month, day)
-{
+function persian_to_jd(year, month, day){
     var epbase, epyear;
-
+    
     epbase = year - ((year >= 0) ? 474 : 473);
     epyear = 474 + mod(epbase, 2820);
-
+    
     return day +
-            ((month <= 7) ?
-                ((month - 1) * 31) :
-                (((month - 1) * 30) + 6)
-            ) +
-            Math.floor(((epyear * 682) - 110) / 2816) +
-            (epyear - 1) * 365 +
-            Math.floor(epbase / 2820) * 1029983 +
-            (PERSIAN_EPOCH - 1);
+    ((month <= 7) ? ((month - 1) * 31) : (((month - 1) * 30) + 6)) +
+    Math.floor(((epyear * 682) - 110) / 2816) +
+    (epyear - 1) * 365 +
+    Math.floor(epbase / 2820) * 1029983 +
+    (PERSIAN_EPOCH - 1);
 }
 
 //  JD_TO_PERSIAN  --  Calculate Persian date from Julian day
 
-function jd_to_persian(jd)
-{
-    var year, month, day, depoch, cycle, cyear, ycycle,
-        aux1, aux2, yday;
-
-
+function jd_to_persian(jd){
+    var year, month, day, depoch, cycle, cyear, ycycle, aux1, aux2, yday;
+    
+    
     jd = Math.floor(jd) + 0.5;
-
+    
     depoch = jd - persian_to_jd(475, 1, 1);
     cycle = Math.floor(depoch / 1029983);
     cyear = mod(depoch, 1029983);
     if (cyear == 1029982) {
         ycycle = 2820;
-    } else {
+    }
+    else {
         aux1 = Math.floor(cyear / 366);
         aux2 = mod(cyear, 366);
         ycycle = Math.floor(((2134 * aux1) + (2816 * aux2) + 2815) / 1028522) +
-                    aux1 + 1;
+        aux1 +
+        1;
     }
     year = ycycle + (2820 * cycle) + 474;
     if (year <= 0) {
@@ -125,56 +131,52 @@ function jd_to_persian(jd)
     return new Array(year, month, day);
 }
 
-function calcPersian(year,month,day)
-{
-    var date,j;
-
-    j = persian_to_jd(year,month,day);
+function calcPersian(year, month, day){
+    var date, j;
+    
+    j = persian_to_jd(year, month, day);
     date = jd_to_gregorian(j);
     weekday = jwday(j);
-    return new Array(date[0], date[1], date[2],weekday);
+    return new Array(date[0], date[1], date[2], weekday);
 }
 
 //  calcGregorian  --  Perform calculation starting with a Gregorian date
-function calcGregorian(year,month,day)
-{
+function calcGregorian(year, month, day){
     month--;
-
+    
     var j, weekday;
-
+    
     //  Update Julian day
-
+    
     j = gregorian_to_jd(year, month + 1, day) +
-           (Math.floor(0 + 60 * (0 + 60 * 0) + 0.5) / 86400.0);
-
+    (Math.floor(0 + 60 * (0 + 60 * 0) + 0.5) / 86400.0);
+    
     //  Update Persian Calendar
     perscal = jd_to_persian(j);
     weekday = jwday(j);
-    return new Array(perscal[0], perscal[1], perscal[2],weekday);
+    return new Array(perscal[0], perscal[1], perscal[2], weekday);
 }
 
-function getTodayGregorian()
-{
+function getTodayGregorian(){
     var t = new Date();
     var today = new Date();
-
+    
     var y = today.getYear();
-	//var y = 2008;
+    //var y = 2008;
     if (y < 1000) {
         y += 1900;
     }
-	//var postdate = y + "/08/23";
-
-    return new Array(y, today.getMonth() + 1, today.getDate(),t.getDay());
+    //var postdate = y + "/08/23";
+    
+    return new Array(y, today.getMonth() + 1, today.getDate(), t.getDay());
 }
 
-function getTodayPersian()
-{
+function getTodayPersian(){
     var t = new Date();
     var today = getTodayGregorian();
-
-    var persian = calcGregorian(today[0],today[1],today[2]);
-    return new Array(persian[0],persian[1],persian[2],t.getDay());
+    
+    var persian = calcGregorian(today[0], today[1], today[2]);
+    return new Array(persian[0], persian[1], persian[2], t.getDay());
 }
 
 var gDateOnly = false;
@@ -186,372 +188,208 @@ var gBrakeFormat = false;
 var gLongFormat = false;
 // date and persian day 
 var gParsiLongFormat = false;
+var gParsiShortFormat = false;
 //Converts a gregorian date to Jalali date for different formats
-function ToPersianDate(gd)
-{
-
-var pa = calcGregorian(gd.getFullYear(),gd.getMonth() +1, gd.getDate());
-var p;
-
-if (gTimeOnly)
-             {
-
-		var h = formatPersian(((gd.getHours()>12)?(gd.getHours()-12):(gd.getHours()===0?12:	gd.getHours())));
-		var min = formatPersian(((gd.getMinutes()<10)?('0' + gd.getMinutes()):(gd.getMinutes())));
-		
-		p = h + ':' + min.replace(' ','') + ' ' + 
-			((gd.getHours()>=12)?'ب ظ':'ق ظ');
-              }
-else
-  {
-if (gBrakeFormat)
-             {
-                           p = "<b>" + PERSIAN_WEEKDAYS[pa[3]] + "</b><br/>" + formatPersian(pa[2]) + " " + PERSIAN_MONTHS[pa[1] -1] + " " + formatPersian(pa[0]);
-              }
-else
-    {
-if (!gDateOnly)
-	p = PERSIAN_WEEKDAYS[pa[3]] + "،  " + formatPersian(pa[2]) + " " + PERSIAN_MONTHS[pa[1] -1] + " " + formatPersian(pa[0]);
-else
-	p = PERSIAN_WEEKDAYS[pa[3]] + "،  " +formatPersian(pa[1]) + "/" + formatPersian(pa[2]);
-	
-if (gLongFormat)
-	{	
-		p += '  ';
-		
-		var h = formatPersian(((gd.getHours()>12)?(gd.getHours()-12):(gd.getHours()===0?12:	gd.getHours())));
-		var min = formatPersian(((gd.getMinutes()<10)?('0' + gd.getMinutes()):(gd.getMinutes())));
-		
-		p += '،  ' + h + ':' + min.replace(' ','') + ' ' + 
-			((gd.getHours()>=12)?'ب ظ':'ق ظ');
-	}
-
-if (gParsiLongFormat)
-	{
-		p += '،  ' + PERSIAN_DAYS[pa[2]-1] + ' روز';
-	}	
+function ToPersianDate(gd){
+    //alert(gd.getFullYear());
+    var pa = calcGregorian(gd.getFullYear(), gd.getMonth() + 1, gd.getDate());
+    var p;
+    
+    if (gTimeOnly) {
+    
+        var h = formatPersian(((gd.getHours() > 12) ? (gd.getHours() - 12) : (gd.getHours() === 0 ? 12 : gd.getHours())));
+        var min = formatPersian(((gd.getMinutes() < 10) ? ('0' + gd.getMinutes()) : (gd.getMinutes())));
+        
+        p = h + ':' + min.replace(' ', '') + ' ' +
+        ((gd.getHours() >= 12) ? 'ب ظ' : 'ق ظ');
     }
-  }		
-return p;
-
+    else {
+        if (gBrakeFormat) {
+            p = "<b>" + PERSIAN_WEEKDAYS[pa[3]] + "</b><br/>" + formatPersian(pa[2]) + " " + PERSIAN_MONTHS[pa[1] - 1] + " " + formatPersian(pa[0]);
+        }
+        else {
+            if (!gDateOnly) 
+                p = PERSIAN_WEEKDAYS[pa[3]] + "،  " + formatPersian(pa[2]) + " " + PERSIAN_MONTHS[pa[1] - 1] + " " + formatPersian(pa[0]);
+            else 
+                p = PERSIAN_WEEKDAYS[pa[3]] + "،  " + formatPersian(pa[1]) + "/" + formatPersian(pa[2]);
+            
+            if (gLongFormat) {
+                p += '  ';
+                
+                var h = formatPersian(((gd.getHours() > 12) ? (gd.getHours() - 12) : (gd.getHours() === 0 ? 12 : gd.getHours())));
+                var min = formatPersian(((gd.getMinutes() < 10) ? ('0' + gd.getMinutes()) : (gd.getMinutes())));
+                
+                p += '،  ' + h + ':' + min.replace(' ', '') + ' ' +
+                ((gd.getHours() >= 12) ? 'ب ظ' : 'ق ظ');
+            }
+            
+            if (gParsiLongFormat) {
+                p += '،  ' + PERSIAN_DAYS[pa[2] - 1] + ' روز';
+            }
+            
+            if (gParsiShortFormat) {
+                p = formatPersian(pa[2]) +
+                " " +
+                PERSIAN_MONTHS[pa[1] - 1] +
+                " " +
+                formatPersian(pa[0]);
+            }
+        }
+    }
+    return "<span dir='rtl'>" + p + appendEnDate(gd) + "</span>";
+    
 }
 
-function ArrayToPersianDate(pa)
-{
-// calc weekday
-var pd = calcPersian(pa[0],pa[1], pa[2]);
-var gd = calcGregorian(pd[0],pd[1], pd[2]);
-var p = PERSIAN_WEEKDAYS[gd[3]] + "،  " + formatPersian(gd[2]) + " " + PERSIAN_MONTHS[gd[1] -1] + " " + formatPersian(gd[0]);
-
-return p;
-
+function ArrayToPersianDate(pa){
+    // calc weekday
+    var pd = calcPersian(pa[0], pa[1], pa[2]);
+    var gd = calcGregorian(pd[0], pd[1], pd[2]);
+    var p = PERSIAN_WEEKDAYS[gd[3]] + "،  " + formatPersian(gd[2]) + " " + PERSIAN_MONTHS[gd[1] - 1] + " " + formatPersian(gd[0]);
+    
+    return p;
+    
 }
 
-function ArrayToGregorianDate(pa)
-{
-// calc weekday
-var pd = calcPersian(pa[0],pa[1], pa[2]);
-var p = pd[0] + "-" + ((pd[1] < 10) ? "0" + pd[1] : pd[1]) + "-" + ((pd[2] < 10) ? "0" + pd[2] : pd[2]);
-
-return p;
-
+function ArrayToGregorianDate(pa){
+    // calc weekday
+    var pd = calcPersian(pa[0], pa[1], pa[2]);
+    var p = pd[0] + "-" + ((pd[1] < 10) ? "0" + pd[1] : pd[1]) + "-" + ((pd[2] < 10) ? "0" + pd[2] : pd[2]);
+    
+    return p;
+    
 }
+
+function ToPersianDateLong(gdStr){
+
+    var origData = gdStr;
+    if (window.location.host.toLowerCase().indexOf("mail.yahoo.com") != -1) {
+        var idx = gdStr.lastIndexOf("/");
+        if (idx != -1) {
+            var year = parseInt(gdStr.substr(idx + 1, 2), 10);
+            if (!isNaN(year)) {
+                year += 2000; //Yahoo's year fix
+                //12/15/08 PM --> to
+                //12/15/2008 PM        
+                gdStr = gdStr.substr(0, idx + 1) + year + gdStr.substr(idx + 3, gdStr.length - 3);
+            }
+        }
+    }
+    
+    var gd = new Date(gdStr);
+    
+    var hrs = gd.getHours();
+    if (isNaN(hrs)) 
+        return origData;
+    
+    var mins = gd.getMinutes();
+    if (isNaN(mins)) 
+        return origData;
+    
+    var h = formatPersian(((hrs > 12) ? (hrs - 12) : (hrs === 0 ? 12 : hrs)));
+    var min = formatPersian(((mins < 10) ? ('0' + mins) : (mins)));
+    var pa = calcGregorian(gd.getFullYear(), gd.getMonth() + 1, gd.getDate());
+    return "<span style='font-family:tahoma; font-size:8pt;'  dir='rtl'>" +
+    formatPersian(pa[2]) +
+    " " +
+    PERSIAN_MONTHS[pa[1] - 1] +
+    " " +
+    formatPersian(pa[0]) +
+    '،  ' +
+    h +
+    ':' +
+    min.replace(' ', '') +
+    ' ' +
+    ((hrs >= 12) ? 'ب ظ' : 'ق ظ') +
+    appendEnDate(gd) +
+    "</span>";
+}
+
 
 //
 // formats numerical values to persian numbers
 // added by Bahram Maravandi
 // 13 Feb 2007,  24 Bahman 1385
 //
-function formatPersian(num)
-{
-   var tmp = num;
-   tmp = tmp.toString(); 
-
-   for(var i=0; i < 10; i++)
-   {	
-	for(var z=0; z < tmp.length; z++)
-		tmp = tmp.replace(i , PERSIAN_DIGITS[i]);	
-   }
-   
-   tmp = tmp.replace(" ",'');
-   return tmp;
+function formatPersian(num){
+    var tmp = num;
+    tmp = tmp.toString();
+    
+    for (var i = 0; i < 10; i++) {
+        for (var z = 0; z < tmp.length; z++) 
+            tmp = tmp.replace(i, PERSIAN_DIGITS[i]);
+    }
+    
+    tmp = tmp.replace(" ", '');
+    return tmp;
 }
 
+//Added by Vahid Nasiri for Blogger ...
 
-
-
-
-
-//
-// Google Calendar main codes
-// developed by Nima Rasouli: http://nima.rasouli.org
-// 26 Aug 2008, 5 Sahrivar 1387
-//
-
-gDateOnly = true;
-
-// Saturday
-function sattimedCount() 
-{
-	var satchead = document.getElementById('chead0'); 
-	var satval = satchead.childNodes[0].firstChild.nodeValue;
-	var satpos = satval.indexOf("Sat"); 
-	if (satpos==0)
-	{
-		satval = satval.replace(/Sat /, "/"); 
-		var satdate = '2009'+ satval; //temporary for 2009 year
-		var satper = ToPersianDate(new Date(satdate));
-		var satnew = document.createElement("span");
-		satnew.setAttribute('id','chead0per');
-		satnew.innerHTML = '<a style="direction:rtl;text-align:right;" href="javascript:void(Zw(1))" class="lkh">' +  satper + '</a><style>.chead { direction: rtl; }a, p, label, html, body, span, div, td, br, input, font, button, select, option { font-family: Tahoma !important; } .noleft { direction: rtl; text-align: right; }.chip { direction: rtl; }.calListLabelOuter { direction: rtl; padding-right: 5px; }</style>';
-		document.body.insertBefore(satnew, document.body.firstChild);
-		satchead.parentNode.replaceChild(satnew, satchead); 
-	}
- 	for(var i = 1; i <= 5; i++) 
-	{
-		window.addEventListener('click',sattimedCount,false);  //addListeners to various events that updates the page.
-	}
-}
-sattimedCount();
-function satloader0() {	
-	setTimeout(satloader1,500);
-}
-function satloader1() {	
-	setTimeout(sattimedCount,2000);
-}
-function satloader2() {	
-	setTimeout(sattimedCount,500);
-}
-for(var i = 1; i <= 5; i++){
-window.addEventListener('click',satloader0,false); 
-window.addEventListener('load',satloader1,false);  
-window.addEventListener('resize',satloader2,false);  
+function appendEnDate(dataStr){
+    var curdate = new Date(dataStr);
+    var day = curdate.getDate();
+    var month = curdate.getMonth();
+    var year = curdate.getFullYear();
+    if (!(isNaN(day) && isNaN(month))) 
+        return ' (' + formatPersian(day) + ' ' + GREGORIAN_MONTH[month] + ' ' + formatPersian(year) + ') ';
+    else 
+        return '';
 }
 
-// Sunday
-function suntimedCount() 
-{
-	var sunchead = document.getElementById('chead1'); 
-	var sunval = sunchead.childNodes[0].firstChild.nodeValue;
-	var sunpos = sunval.indexOf("Sun"); 
-	if (sunpos==0)
-	{
-		sunval = sunval.replace(/Sun /, "/"); 
-		var sundate = '2008'+ sunval; //temporary for 2008 year
-		var sunper = ToPersianDate(new Date(sundate));
-		var sunnew = document.createElement("span");
-		sunnew.setAttribute('id','chead1per');
-		sunnew.innerHTML = '<a style="direction:rtl;text-align:right;" href="javascript:void(Zw(1))" class="lkh">' +  sunper + '</a>';
-		document.body.insertBefore(sunnew, document.body.firstChild);
-		sunchead.parentNode.replaceChild(sunnew, sunchead); 
-	}
- 	for(var i = 1; i <= 5; i++) 
-	{
-		window.addEventListener('click',suntimedCount,false);  //addListeners to various events that updates the page.
-	}
-}
-suntimedCount();
-function sunloader0() {	
-	setTimeout(sunloader1,500);
-}
-function sunloader1() {	
-	setTimeout(suntimedCount,2000);
-}
-function sunloader2() {	
-	setTimeout(suntimedCount,500);
-}
-for(var i = 1; i <= 5; i++){
-window.addEventListener('click',sunloader0,false); 
-window.addEventListener('load',sunloader1,false);  
-window.addEventListener('resize',sunloader2,false);  
+var years = new Array(30);
+var yearCnt = 0;
+var addData = false;
+var yearsLastActiveMonth = new Array(30);
+function getBloggerPMonthNames(data){
+    if (isNaN(data)) {
+        if (addData) {
+            yearsLastActiveMonth[yearCnt - 1] = data;
+            addData = false;
+        }
+        var gd = new Date(" 1 " + data + " " + new Date().getYear());
+        var pa = calcGregorian(gd.getFullYear(), gd.getMonth() + 1, gd.getDate());
+        return PERSIAN_MONTHS[pa[1] - 1];
+    }
+    else {
+        years[yearCnt] = data;
+        yearCnt++;
+        addData = true;
+    }
 }
 
-// Monday
-function montimedCount() 
-{
-	var monchead = document.getElementById('chead2'); 
-	var monval = monchead.childNodes[0].firstChild.nodeValue;
-	var monpos = monval.indexOf("Mon"); 
-	if (monpos==0)
-	{
-		monval = monval.replace(/Mon /, "/"); 
-		var mondate = '2008'+ monval; //temporary for 2008 year
-		var monper = ToPersianDate(new Date(mondate));
-		var monnew = document.createElement("span");
-		monnew.setAttribute('id','chead2per');
-		monnew.innerHTML = '<a style="direction:rtl;text-align:right;" href="javascript:void(Zw(1))" class="lkh">' +  monper + '</a>';
-		document.body.insertBefore(monnew, document.body.firstChild);
-		monchead.parentNode.replaceChild(monnew, monchead); 
-	}
- 	for(var i = 1; i <= 5; i++) 
-	{
-		window.addEventListener('click',montimedCount,false);  //addListeners to various events that updates the page.
-	}
-}
-montimedCount();
-function monloader0() {	
-	setTimeout(monloader1,500);
-}
-function monloader1() {	
-	setTimeout(montimedCount,2000);
-}
-function monloader2() {	
-	setTimeout(montimedCount,500);
-}
-for(var i = 1; i <= 5; i++){
-window.addEventListener('click',monloader0,false); 
-window.addEventListener('load',monloader1,false);  
-window.addEventListener('resize',monloader2,false);  
+var modYear = 0;
+function getBloggerPYear(data){
+    if (!isNaN(data)) {
+        var myDate = " 1 " + yearsLastActiveMonth[modYear] + " " + years[modYear];
+        var gd = new Date(myDate);
+        modYear++;
+        var pa = calcGregorian(gd.getFullYear(), gd.getMonth() + 1, gd.getDate());
+        return formatPersian(pa[0]) + "/" + formatPersian(data);
+    }
+    else 
+        return data;
 }
 
-// Tuesday
-function tuetimedCount() 
-{
-	var tuechead = document.getElementById('chead3'); 
-	var tueval = tuechead.childNodes[0].firstChild.nodeValue;
-	var tuepos = tueval.indexOf("Tue"); 
-	if (tuepos==0)
-	{
-		tueval = tueval.replace(/Tue /, "/"); 
-		var tuedate = '2008'+ tueval; //temporary for 2008 year
-		var tueper = ToPersianDate(new Date(tuedate));
-		var tuenew = document.createElement("span");
-		tuenew.setAttribute('id','chead3per');
-		tuenew.innerHTML = '<a style="direction:rtl;text-align:right;" href="javascript:void(Zw(1))" class="lkh">' +  tueper + '</a>';
-		document.body.insertBefore(tuenew, document.body.firstChild);
-		tuechead.parentNode.replaceChild(tuenew, tuechead); 
-	}
- 	for(var i = 1; i <= 5; i++) 
-	{
-		window.addEventListener('click',tuetimedCount,false);  //addListeners to various events that updates the page.
-	}
-}
-tuetimedCount();
-function tueloader0() {	
-	setTimeout(tueloader1,500);
-}
-function tueloader1() {	
-	setTimeout(tuetimedCount,2000);
-}
-function tueloader2() {	
-	setTimeout(tuetimedCount,500);
-}
-for(var i = 1; i <= 5; i++){
-window.addEventListener('click',tueloader0,false); 
-window.addEventListener('load',tueloader1,false);  
-window.addEventListener('resize',tueloader2,false);  
-}
 
-// Wednesday
-function wedtimedCount() 
-{
-	var wedchead = document.getElementById('chead4'); 
-	var wedval = wedchead.childNodes[0].firstChild.nodeValue;
-	var wedpos = wedval.indexOf("Wed"); 
-	if (wedpos==0)
-	{
-		wedval = wedval.replace(/Wed /, "/"); 
-		var weddate = '2008'+ wedval; //temporary for 2008 year
-		var wedper = ToPersianDate(new Date(weddate));
-		var wednew = document.createElement("span");
-		wednew.setAttribute('id','chead4per');
-		wednew.innerHTML = '<a style="direction:rtl;text-align:right;" href="javascript:void(Zw(1))" class="lkh">' +  wedper + '</a>';
-		document.body.insertBefore(wednew, document.body.firstChild);
-		wedchead.parentNode.replaceChild(wednew, wedchead); 
-	}
- 	for(var i = 1; i <= 5; i++) 
-	{
-		window.addEventListener('click',wedtimedCount,false);  //addListeners to various events that updates the page.
-	}
 }
-wedtimedCount();
-function wedloader0() {	
-	setTimeout(wedloader1,500);
-}
-function wedloader1() {	
-	setTimeout(wedtimedCount,2000);
-}
-function wedloader2() {	
-	setTimeout(wedtimedCount,500);
-}
-for(var i = 1; i <= 5; i++){
-window.addEventListener('click',wedloader0,false); 
-window.addEventListener('load',wedloader1,false);  
-window.addEventListener('resize',wedloader2,false);  
-}
+/*
+     FILE ARCHIVED ON 20:20:35 Aug 22, 2021 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 08:20:03 Feb 26, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
 
-// Thursday
-function thutimedCount() 
-{
-	var thuchead = document.getElementById('chead5'); 
-	var thuval = thuchead.childNodes[0].firstChild.nodeValue;
-	var thupos = thuval.indexOf("Thu"); 
-	if (thupos==0)
-	{
-		thuval = thuval.replace(/Thu /, "/"); 
-		var thudate = '2008'+ thuval; //temporary for 2008 year
-		var thuper = ToPersianDate(new Date(thudate));
-		var thunew = document.createElement("span");
-		thunew.setAttribute('id','chead5per');
-		thunew.innerHTML = '<a style="direction:rtl;text-align:right;" href="javascript:void(Zw(1))" class="lkh">' +  thuper + '</a>';
-		document.body.insertBefore(thunew, document.body.firstChild);
-		thuchead.parentNode.replaceChild(thunew, thuchead); 
-	}
- 	for(var i = 1; i <= 5; i++) 
-	{
-		window.addEventListener('click',thutimedCount,false);  //addListeners to various events that updates the page.
-	}
-}
-thutimedCount();
-function thuloader0() {	
-	setTimeout(thuloader1,500);
-}
-function thuloader1() {	
-	setTimeout(thutimedCount,2000);
-}
-function thuloader2() {	
-	setTimeout(thutimedCount,500);
-}
-for(var i = 1; i <= 5; i++){
-window.addEventListener('click',thuloader0,false); 
-window.addEventListener('load',thuloader1,false);  
-window.addEventListener('resize',thuloader2,false);  
-}
-
-// Friday
-function fritimedCount() 
-{
-	var frichead = document.getElementById('chead6'); 
-	var frival = frichead.childNodes[0].firstChild.nodeValue;
-	var fripos = frival.indexOf("Fri"); 
-	if (fripos==0)
-	{
-		frival = frival.replace(/Fri /, "/"); 
-		var fridate = '2008'+ frival; //temporary for 2008 year
-		var friper = ToPersianDate(new Date(fridate));
-		var frinew = document.createElement("span");
-		frinew.setAttribute('id','chead6per');
-		frinew.innerHTML = '<a style="direction:rtl;text-align:right;" href="javascript:void(Zw(1))" class="lkh">' +  friper + '</a>';
-		document.body.insertBefore(frinew, document.body.firstChild);
-		frichead.parentNode.replaceChild(frinew, frichead); 
-	}
- 	for(var i = 1; i <= 5; i++) 
-	{
-		window.addEventListener('click',fritimedCount,false);  //addListeners to various events that updates the page.
-	}
-}
-fritimedCount();
-function friloader0() {	
-	setTimeout(friloader1,500);
-}
-function friloader1() {	
-	setTimeout(fritimedCount,2000);
-}
-function friloader2() {	
-	setTimeout(fritimedCount,500);
-}
-for(var i = 1; i <= 5; i++){
-window.addEventListener('click',friloader0,false); 
-window.addEventListener('load',friloader1,false);  
-window.addEventListener('resize',friloader2,false);  
-}
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 178.706
+  exclusion.robots: 0.216
+  exclusion.robots.policy: 0.2
+  RedisCDXSource: 15.317
+  esindex: 0.01
+  LoadShardBlock: 128.744 (3)
+  PetaboxLoader3.datanode: 133.608 (4)
+  CDXLines.iter: 31.599 (3)
+  load_resource: 122.268
+  PetaboxLoader3.resolve: 36.633
+*/
