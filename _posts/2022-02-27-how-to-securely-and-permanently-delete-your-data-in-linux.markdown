@@ -24,4 +24,5 @@ $ sudo shred -zvu -n  5 /path/to/file
 $ sudo shred -zvu -n 10 /dev/sdbx
 ```  
 در دستور بالا فقط پارتیشن `/dev/sdbx` پاک شد اگر میخواهید کل درایو را پاک کنید، `/dev/sdb` را جایگزین کنید.
+
 *[SSD]: Solid State Drive
