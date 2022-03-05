@@ -13,6 +13,9 @@ section a:hover, header a:hover, header a:focus {
 section a:visited {
   color: #751590;
 }
+section p {
+  line-height: 1.6 !important;
+}
 section p, ol, ul{
   text-align: right;
   direction: rtl;
