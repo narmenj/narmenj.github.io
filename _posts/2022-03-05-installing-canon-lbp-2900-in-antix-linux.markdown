@@ -11,7 +11,7 @@ categories:
 
 برای شروع، `CUPS` را به همراه سایر نیازمندی‌های پرینتر، نصب میکنیم:
 ````console
-$ sudo apt install cups libcups2 ghostscript libxml2 libpopt0 Libpangox-1.0-dev
+$ sudo apt install cups libcups2 libcups2-dev ghostscript libxml2 libpopt0 Libpangox-1.0-dev
 ```  
 سپس فایل درایور را [اینجا](https://mega.nz/file/Qy4g1Tha#_1mynZstA4JgLz8ucpW3jYLPQz5AS03UFowxq3o9asU){:target="_blank"} دانلود کرده و آن را از حالت فشرده خارج سازید.
 #### تغییر در محتویات درایور
