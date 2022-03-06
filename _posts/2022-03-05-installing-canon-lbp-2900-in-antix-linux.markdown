@@ -32,6 +32,7 @@ $ dpkg-deb --control cndrvcups-common_2.00-2_i386.deb
 حالا باید دو پوشه جدید `common` و `DEBIAN` را ببینیم.  
 وارد پوشه `DEBIAN` شده و فایل `control` را ویرایش میکنیم:
 ```console
+$ cd DEBIAN
 $ nano control
 ```  
 خط ششم را ویرایش کرده، `cupsys` و `gs-esp` را حذف کرده، بجای آنها `libcups2` و `ghostscript` را قرار میدهیم و فایل را ذخیره میکنیم.  
