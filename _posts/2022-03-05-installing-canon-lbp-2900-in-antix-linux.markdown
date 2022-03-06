@@ -24,7 +24,7 @@ $ cd CAPT_Printer_Driver_for_Linux_V200_uk_EN/Driver/Debian/
 cndrvcups-capt_2.00-2_i386.deb
 cndrvcups-common_2.00-2_i386.deb
 ```  
-با دو دستور پایین مجتویات فایل دوم را استخراج میکنیم:
+با دو دستور پایین محتویات فایل دوم را استخراج میکنیم:
 ```console
 $ dpkg-deb -x cndrvcups-common_2.00-2_i386.deb common
 $ dpkg-deb --control cndrvcups-common_2.00-2_i386.deb
@@ -34,7 +34,7 @@ $ dpkg-deb --control cndrvcups-common_2.00-2_i386.deb
 ```console
 $ nano control
 ```  
-خط ششم را ویرایش کرده، `cupsys` و `gs-esp` را حذف کرده، بجای آنها `libcups2` را تایپ میکنیم و فایل را ذخیره میکنیم.  
+خط ششم را ویرایش کرده، `cupsys` و `gs-esp` را حذف کرده، بجای آنها `libcups2` و `ghostscript` را قرار میدهیم و فایل را ذخیره میکنیم.  
 فایل `preinst` را هم با دستور زیر خالی میکنیم:
 ```console
 $ echo > preinst
