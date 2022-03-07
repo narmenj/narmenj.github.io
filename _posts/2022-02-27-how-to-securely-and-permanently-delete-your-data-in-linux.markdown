@@ -5,6 +5,31 @@ date: 2022-02-27 10:04:35 +0330
 excerpt_separator: <!--more-->
 categories:
  - linux
+tags:
+- linux
+- secure
+- permanent
+- data
+- delete
+- shred
+- SSD
+- HDD
+- hard
+- disk
+- pointer
+- sector
+- recovery
+- rewrite
+- remove
+- لینوکس
+- امن
+- پاک
+- هارد
+- دیسک
+- سکتور
+- ریکاوری
+- بازنویسی
+- حذف
 ---
 #### پاک کردن امن اطلاعات از هارد دیسک
 نکته :bulb: : این روش فقط برای هارد دیسک معمولی استفاده می‌شود برای SSD هرگز از این دستورات استفاده نکنید زیرا باعث کوتاه شدن عمر آن میشود.

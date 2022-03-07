@@ -5,6 +5,29 @@ date: 2022-02-10 17:21:05 +0330
 excerpt_separator: <!--more-->
 categories:
  - linux
+tags:
+- linux
+- email
+- conky
+- python
+- script
+- notify
+- check
+- cron
+- crontab
+- gmail
+- login
+- google
+- password
+- لینوکس
+- ایمیل
+- کانکی
+- پایتون
+- اسکریپت
+- جیمیل
+- لاگین
+- گوگل
+- پسورد
 ---
 برای این که در کانکی تعداد ایمیل‌های جدید را ببینیم، ابتدا فایلی با محتوای زیر و با نام دلخواه مثلا `checkmail.py` میسازیم: (یوزرنیم و پسورد خود را در آن جایگزین میکنیم)
 <!--more-->

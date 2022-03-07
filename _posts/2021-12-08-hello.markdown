@@ -2,7 +2,21 @@
 layout: post
 title:  "درود !"
 date:   2021-12-08 14:45:41 +0330
-categories: daily-notes
+categories:
+- daily-notes
+tags:
+- linux
+- ram
+- ddr
+- antiX
+- ide
+- 32bit
+- pentium
+- old
+- لینوکس
+- رم
+- پنتیوم
+- قدیمی
 excerpt_separator: <!--more-->
 ---
 بالاخره از تو غارمون دراومدیم /:   

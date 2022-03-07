@@ -2,7 +2,24 @@
 layout: post
 title:  "نصب dwm"
 date:   2021-12-31 13:17:51 +0330
-categories: linux
+categories:
+- linux
+tags:
+- linux
+- dwm
+- st
+- dmenu
+- git
+- tiled
+- floating
+- monocle
+- farsi
+- window
+- manager
+- لینوکس
+- گیت
+- فارسی
+- پنجره
 excerpt_separator: <!--more-->
 ---
 با دستورات زیر `dwm`، `st` و `dmenu` را نصب میکنیم:

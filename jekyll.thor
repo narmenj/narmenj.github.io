@@ -1,7 +1,7 @@
 require "stringex"
 class Jekyll < Thor
   desc "new", "create a new post"
-  method_option :editor, :default => "remarkable"
+  method_option :editor, :default => "retext"
   def new(*title)
     title = title.join(" ")
     date = Time.now.strftime('%Y-%m-%d')

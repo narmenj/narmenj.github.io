@@ -2,7 +2,25 @@
 layout: post
 title:  "رمزنگاری در mutt"
 date:   2021-12-25 12:18:11 +0330
-categories: linux
+categories:
+- linux
+- mutt
+- encryption
+- key
+- private
+- public
+- gpg
+- arch
+- antiX
+- email
+- config
+- لینوکس
+- آرچ
+- رمزنگاری
+- کلید
+- عمومی
+- خصوصی
+- ایمیل
 excerpt_separator: <!--more-->
 ---
 آموزش ساده رمزنگاری با `gpg` در `mutt‍`
