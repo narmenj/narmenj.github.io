@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ویم مود در بش"
+title: "وی مود در بش"
 date: 2022-03-10 15:33:53 +0330
 excerpt_separator: <!--more-->
 categories:
@@ -8,6 +8,7 @@ categories:
 tags:
 - linux
 - vim
+- vi
 - bash
 - command
 - line
