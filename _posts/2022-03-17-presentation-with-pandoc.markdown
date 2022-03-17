@@ -14,9 +14,10 @@ tags:
 - md
 - markdown
 - font
-- bilangual
+- bilingual
 - terminal
 - office
+- libreoffice
 - powerpoint
 - لینوکس
 - پانداک
@@ -34,7 +35,7 @@ tags:
 البته برای اینکه فایل ارائه‌مان، تم هم داشته باشد به ابزار دیگری بنام `beamer` هم نیاز داریم
 بعد از نصب `pandoc` و `beamer` فقط لازم است فایل مقاله یا تحقیقمان را در قالب `markdown` نوشته و آن را تبدیل به `pdf` کنیم.  
 فایل نمونه:
-```markdown
+{% highlight markdown linenos %}
 ---
 dir: rtl
 mainfont: BNazanin
@@ -72,10 +73,11 @@ date:
 # اسلاید آخر
 تصویر  
 ![sample picture](desktop.png)
-```  
+{% endhighlight %}  
+:bulb: در صورتی که از فونتی استفاده میکنید که کاراکترهای فارسی و انگلیسی را با هم دارد نیازی به افزودن خطوط ۴ و ۵ نیست. همچنین میتوانید خطوط انگلیسی را عادی و بدون نیاز به فرمت بالا(خطوط 32 . 33) تایپ کنید.  
 با دستور پایین آن را به `pdf` تبدیل میکنیم:
 ```console
 $ pandoc --pdf-engine=xelatex -t beamer sample.md -o sample.pdf
 ```  
-[لیست](https://mpetroff.net/files/beamer-theme-matrix/){:target="_blank"} تم‌ها و رنگ‌های بیمر  
+[لیست](https://mpetroff.net/files/beamer-theme-matrix/){:target="_blank"} تم‌ها و رنگبندی‌های بیمر  
 [این](https://mega.nz/file/12h0CKwI#V-LTJ5ogrcOtLUpkLakmMDegwwrfn0nQDRSEv0qiF4I){:target="_blank"} هم نتیجه کار
